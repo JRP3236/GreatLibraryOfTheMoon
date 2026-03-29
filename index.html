@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gran Biblioteca de la Luna</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Música de fondo -->
+  <audio id="bg-music" loop>
+    <source src="src\music\ambiente.mp3" type="audio/mpeg">
+    Tu navegador no soporta audio.
+  </audio>
+
+  <!-- Botón para activar/desactivar música -->
+  <button id="music-btn" class="music-toggle" onclick="toggleMusic()">🔇</button>
+
+  <div class="container">
+    <h1>Gran Biblioteca de la Luna</h1>
+    <div class="menu">
+      <!-- Botón de inicio -->
+      <button id="start-btn">Comenzar</button>
+
+      <!-- Botones menú-->
+      <button id="menuBtn1" class="hidden" onclick="loadContext('enciclopedia')">Enciclopedia</button>
+      <button id="menuBtn2" class="hidden" onclick="loadContext('misiones')">Misiones</button>
+      <button id="menuBtn3" class="hidden" onclick="loadContext('mapa')">Mapa</button>
+    </div>
+  </div>
+
+  <!-- CUADRO DE DIÁLOGO -->
+  <div id="dialogue-box" class="dialogue hidden">
+    <img id="dialogue-portrait" src="" alt="personaje">
+    <div id="dialogue-text"></div>
+  </div>
+
+  <!--
+  ------------------------------------------------------------
+          JAVASCRIPT  
+  ------------------------------------------------------------
+  -->
+
+  <script>
+    //Inicio y entrada al menú
+    const startBtn = document.getElementById('start-btn');
+    const menuDiv = document.querySelector('.menu');
+    const menuBtn1 = document.getElementById('menuBtn1');
+    const menuBtn2 = document.getElementById('menuBtn2');
+    const menuBtn3 = document.getElementById('menuBtn3');
+    const dialogueBox = document.getElementById('dialogue-box');
+
+    startBtn.addEventListener('click', () => {
+      startBtn.classList.add('hidden'); // ocultamos el botón "Comenzar"
+      setTimeout(() => {
+        menuBtn1.classList.remove('hidden');
+        menuBtn2.classList.remove('hidden');
+        menuBtn3.classList.remove('hidden');
+      }, 2000);
+      loadContext('menu'); // cargamos el diálogo inicial
+    });
+
+    //Música
+    const music = document.getElementById('bg-music');
+    const musicBtn = document.getElementById('music-btn');
+    let isPlaying = false;
+
+    // Estado inicial
+    musicBtn.textContent = '🔇'; // icono apagado al cargar la página
+
+    function toggleMusic() {
+      if (isPlaying) {
+        music.pause();
+        isPlaying = false;
+        musicBtn.textContent = '🔇'; // icono apagado
+      } else {
+        music.play();
+        isPlaying = true;
+        musicBtn.textContent = '🔊'; // icono encendido
+      }
+    }
+
+    document.body.addEventListener('click', () => {
+      music.play();
+      isPlaying = true;
+      musicBtn.textContent = '🔊';
+    }, { once: true });
+
+
+    //Lógica de los diálogos
+    const dialogues = {
+      menu: [
+        {
+          id: 1,
+          portrait: 'src/img/pjs/Zero.jpeg',
+          text: '¡Bienvenido! ¿Tú tampoco podías dormir?'
+        }
+      ],
+      mapa: [
+        {
+          id: 1,
+          portrait: 'src/img/pjs/Zero.jpeg',
+          text: 'Aún no tenemos ningún mapa...'
+        }
+      ],
+      misiones: [
+        {
+          id: 1,
+          portrait: 'src/img/pjs/Zero.jpeg',
+          text: 'Creo que ahora tenemos algo MÁS IMPORTANTE de lo que preocuparnos. ¿No crees?'
+        }
+      ],
+      enciclopedia: [
+        {
+          id: 1,
+          portrait: 'src/img/pjs/Zero.jpeg',
+          text: 'Aún no hay muchos, pero espero que encuentres el que buscas.'
+        }
+      ]
+    };
+
+    let typingInterval = null;
+
+    function loadContext(context) {
+      const box = document.getElementById('dialogue-box');
+      const textEl = document.getElementById('dialogue-text');
+      const portraitEl = document.getElementById('dialogue-portrait');
+
+      box.classList.remove('hidden');
+
+      if (typingInterval) {
+        clearInterval(typingInterval);
+      }
+
+      textEl.textContent = '';
+
+      const pool = dialogues[context];
+      const randomDialogue = pool[Math.floor(Math.random() * pool.length)];
+
+      portraitEl.src = randomDialogue.portrait;
+
+      let i = 0;
+      const text = randomDialogue.text;
+
+      typingInterval = setInterval(() => {
+        textEl.textContent += text[i];
+        i++;
+
+        if (i >= text.length) {
+          clearInterval(typingInterval);
+        }
+      }, 30);
+    }
+  </script>
+</body>
+
+</html>
