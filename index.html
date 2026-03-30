@@ -26,11 +26,14 @@
       <button id="start-btn"><i>Toc. Toc. Toc.</i></button>
 
       <!-- Botones menú-->
-      <button id="menuBtn1" class="hidden" onclick="loadContext('enciclopedia')">Enciclopedia</button>
+      <button id="menuBtn1" class="hidden" onclick="loadContext('enciclopedia'); openEnciclopedia()">Enciclopedia</button>
       <button id="menuBtn2" class="hidden" onclick="loadContext('misiones')">Misiones</button>
       <button id="menuBtn3" class="hidden" onclick="loadContext('mapa')">Mapa</button>
     </div>
   </div>
+
+  <!-- Menú de enciclopedia -->
+  <div id="encyclopedia-menu" class="hidden"></div>
 
   <!-- CUADRO DE DIÁLOGO -->
   <div id="dialogue-box" class="dialogue hidden">
@@ -52,6 +55,14 @@
     const menuBtn2 = document.getElementById('menuBtn2');
     const menuBtn3 = document.getElementById('menuBtn3');
     const dialogueBox = document.getElementById('dialogue-box');
+
+
+    //Colección Enciclopedia
+    const enciclopediaData = {
+    personajes: ["Zero"],
+    lugares: [],
+    demonios: []
+    };
 
     startBtn.addEventListener('click', () => {
       startBtn.classList.add('hidden'); // ocultamos el botón "Comenzar"
@@ -154,6 +165,31 @@
         }
       }, 30);
     }
+
+
+
+    function openEnciclopedia() {
+  // ocultar elementos anteriores
+  document.querySelector('h1').classList.add('hidden');
+  document.querySelector('.menu').classList.add('hidden');
+
+  const container = document.getElementById('encyclopedia-menu');
+  container.classList.remove('hidden');
+  container.innerHTML = ''; // limpiar contenido previo
+
+  // crear botones dinámicamente
+  Object.keys(enciclopediaData).forEach(categoria => {
+    const btn = document.createElement('button');
+    btn.classList.add('book-button');
+
+    // capitalizar nombre
+    btn.textContent = categoria.charAt(0).toUpperCase() + categoria.slice(1);
+
+    btn.onclick = () => openCategory(categoria);
+
+    container.appendChild(btn);
+  });
+}
   </script>
 </body>
 
