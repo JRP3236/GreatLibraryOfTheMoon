@@ -190,6 +190,26 @@
     container.appendChild(btn);
   });
 }
+
+    
+  function openCategory(categoria) {
+  const container = document.getElementById('encyclopedia-menu');
+  container.innerHTML = '';
+
+  const items = enciclopediaData[categoria];
+
+  items.forEach(item => {
+    const btn = document.createElement('button');
+    btn.classList.add('book-button');
+    btn.textContent = item;
+
+    btn.onclick = () => {
+      alert("Abrir entrada: " + item);
+    };
+
+    container.appendChild(btn);
+  });
+}
   </script>
 </body>
 
