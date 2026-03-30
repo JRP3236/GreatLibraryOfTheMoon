@@ -233,6 +233,7 @@
 
     container.appendChild(btn);
   });
+      
   // botón "Volver" al final
   const backBtn = document.createElement('button');
   backBtn.classList.add('book-button');
@@ -265,7 +266,10 @@ function openCategory(categoria) {
 
     container.appendChild(btn);
 
-  // botón "Volver" al final
+  container.appendChild(backBtn);
+  });
+
+    // botón "Volver" al final
   const backBtn = document.createElement('button');
   backBtn.classList.add('book-button');
   backBtn.textContent = 'Volver';
@@ -274,8 +278,6 @@ function openCategory(categoria) {
     openEnciclopedia();
     loadContext('menu');
   };
-  container.appendChild(backBtn);
-  });
 }
 
     function openEntry(item) {
