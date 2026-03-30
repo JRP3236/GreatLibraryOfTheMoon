@@ -5,6 +5,10 @@
   font-family: 'Georgia', serif;
 }
 
+.hidden {
+  display: none !important;
+}
+
 body {
   height: 100vh;
   background: radial-gradient(circle at center, #f5ecd9, #e8dcc2);
