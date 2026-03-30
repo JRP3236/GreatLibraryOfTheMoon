@@ -62,7 +62,7 @@
 
     //Colección Enciclopedia
     const enciclopediaData = {
-      personajes: [
+      miembros: [
         {
           id: "zero",
           title: "Zero. La pluma del destino",
@@ -143,6 +143,34 @@
           portrait: 'src/img/pjs/Zero.jpeg',
           text: 'Aún no hay muchos, pero espero que encuentres el que buscas.'
         }
+      ],
+      miembros: [
+        {
+          id: 1,
+          portrait: 'src/img/pjs/Zero.jpeg',
+          text: '¿Hay alguien de quién quieras descubrir algo nuevo?'
+        }
+      ],
+      lugares: [
+        {
+          id: 1,
+          portrait: 'src/img/pjs/Zero.jpeg',
+          text: 'Que tontería, todo el mundo sabe que no hay nada más allá de la ciudad. Espera... ¿Qué acabo de decir? ...'
+        }
+      ],
+      demonios: [
+        {
+          id: 1,
+          portrait: 'src/img/pjs/Zero.jpeg',
+          text: 'No hay ninguno, creo que es cosa de Draethkor...'
+        }
+      ],
+      zero: [
+        {
+          id: 1,
+          portrait: 'src/img/pjs/Zero.jpeg',
+          text: '¿Eh? Podrías haberme preguntado, ¿sabes?'
+        }
       ]
     };
 
@@ -198,7 +226,7 @@
     // capitalizar nombre
     btn.textContent = categoria.charAt(0).toUpperCase() + categoria.slice(1);
 
-    btn.onclick = () => openCategory(categoria);
+    btn.onclick = () => openCategory(categoria); loadContext(categoria);
 
     container.appendChild(btn);
   });
@@ -216,7 +244,7 @@ function openCategory(categoria) {
     btn.classList.add('book-button');
     btn.textContent = item.title;
 
-    btn.onclick = () => openEntry(item);
+    btn.onclick = () => openEntry(item); loadContext(item.id);
 
     container.appendChild(btn);
   });
@@ -239,7 +267,7 @@ function openCategory(categoria) {
     <div class="entry-right">
       <h2>${item.title}</h2>
       ${item.content}
-      <button class="back-btn" onclick="backToMenu()">Volver al menú</button>
+      <button class="back-btn" onclick="backToMenu(); loadContext('menu')">Volver al menú</button>
     </div>
   `;
 }
