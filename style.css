@@ -90,3 +90,22 @@ h1 {
 .hidden {
   display: none;
 }
+
+.book-button {
+  display: block;
+  width: 220px;
+  margin: 10px auto;
+  padding: 15px;
+  border: 2px solid #c2b28f;
+  background: #fdf6e3;
+  color: #3b2f2f;
+  border-radius: 6px;
+  font-family: serif;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.book-button:hover {
+  background: #f1e4c8;
+  transform: scale(1.05);
+}
