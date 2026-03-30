@@ -233,6 +233,17 @@
 
     container.appendChild(btn);
   });
+  // botón "Volver" al final
+  const backBtn = document.createElement('button');
+  backBtn.classList.add('book-button');
+  backBtn.textContent = 'Volver';
+  backBtn.onclick = () => {
+    container.innerHTML = '';
+    document.querySelector('.menu').classList.remove('hidden');
+    document.querySelector('h1').classList.remove('hidden');
+    loadContext('menu');
+  };
+  container.appendChild(backBtn);
 }
 
     
@@ -253,6 +264,17 @@ function openCategory(categoria) {
     };
 
     container.appendChild(btn);
+
+  // botón "Volver" al final
+  const backBtn = document.createElement('button');
+  backBtn.classList.add('book-button');
+  backBtn.textContent = 'Volver';
+  backBtn.onclick = () => {
+    container.innerHTML = '';
+    openEnciclopedia();
+    loadContext('menu');
+  };
+  container.appendChild(backBtn);
   });
 }
 
