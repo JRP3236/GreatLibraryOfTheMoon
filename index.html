@@ -35,6 +35,9 @@
   <!-- Menú de enciclopedia -->
   <div id="encyclopedia-menu" class="hidden"></div>
 
+  <!-- Contenedor Entradas -->
+  <div id="entry-view" class="hidden entry-container"></div>
+
   <!-- CUADRO DE DIÁLOGO -->
   <div id="dialogue-box" class="dialogue hidden">
     <img id="dialogue-portrait" src="" alt="personaje">
@@ -59,9 +62,19 @@
 
     //Colección Enciclopedia
     const enciclopediaData = {
-    personajes: ["Zero"],
-    lugares: [],
-    demonios: []
+      personajes: [
+        {
+          id: "zero",
+          title: "Zero. La pluma del destino",
+          portrait: "src/img/pjs/Zero.jpeg",
+          content: `
+            <p>Hoja de escarcha y hechicera de hielo, aventurera de rango citrino en el gremio de aventureros de Gerdim</p>
+            <p>Tras pactar con la arconte del destino, se le concedió una pluma con voluntad propia y la habilidad de conocer fragmentos del futuro.</p>
+          `
+        }
+      ],
+      lugares: [],
+      demonios: []
     };
 
     startBtn.addEventListener('click', () => {
@@ -192,7 +205,7 @@
 }
 
     
-  function openCategory(categoria) {
+function openCategory(categoria) {
   const container = document.getElementById('encyclopedia-menu');
   container.innerHTML = '';
 
@@ -201,14 +214,53 @@
   items.forEach(item => {
     const btn = document.createElement('button');
     btn.classList.add('book-button');
-    btn.textContent = item;
+    btn.textContent = item.title;
 
-    btn.onclick = () => {
-      alert("Abrir entrada: " + item);
-    };
+    btn.onclick = () => openEntry(item);
 
     container.appendChild(btn);
   });
+}
+
+    container.appendChild(btn);
+  });
+}
+
+
+    function openEntry(item) {
+  const container = document.getElementById('encyclopedia-menu');
+  const entryView = document.getElementById('entry-view');
+
+  // ocultar botones
+  container.classList.add('hidden');
+
+  // mostrar vista
+  entryView.classList.remove('hidden');
+
+  entryView.innerHTML = `
+    <div class="entry-left">
+      <img src="${item.portrait}" alt="${item.title}">
+    </div>
+    <div class="entry-right">
+      <h2>${item.title}</h2>
+      ${item.content}
+      <button class="back-btn" onclick="backToMenu()">Volver al menú</button>
+    </div>
+  `;
+}
+
+    function backToMenu() {
+  const entryView = document.getElementById('entry-view');
+  const menu = document.querySelector('.menu');
+
+  // ocultar entrada
+  entryView.classList.add('hidden');
+
+  // mostrar menú principal
+  menu.classList.remove('hidden');
+
+  // opcional: limpiar contenido
+  entryView.innerHTML = '';
 }
   </script>
 </body>
