@@ -227,8 +227,8 @@
     btn.textContent = categoria.charAt(0).toUpperCase() + categoria.slice(1);
 
     btn.onclick = () => {
-      openCategory(categoria)
-      loadContext(categoria)
+      openCategory(categoria);
+      loadContext(categoria);
     };
 
     container.appendChild(btn);
@@ -248,8 +248,8 @@ function openCategory(categoria) {
     btn.textContent = item.title;
 
     btn.onclick = () => {
-      openEntry(item)
-      loadContext(item.id)
+      openEntry(item);
+      loadContext(item.id);
     };
 
     container.appendChild(btn);
