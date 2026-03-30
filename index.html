@@ -226,7 +226,10 @@
     // capitalizar nombre
     btn.textContent = categoria.charAt(0).toUpperCase() + categoria.slice(1);
 
-    btn.onclick = () => {openCategory(categoria) loadContext(categoria)};
+    btn.onclick = () => {
+      openCategory(categoria)
+      loadContext(categoria)
+    };
 
     container.appendChild(btn);
   });
@@ -244,7 +247,10 @@ function openCategory(categoria) {
     btn.classList.add('book-button');
     btn.textContent = item.title;
 
-    btn.onclick = () => {openEntry(item) loadContext(item.id)};
+    btn.onclick = () => {
+      openEntry(item)
+      loadContext(item.id)
+    };
 
     container.appendChild(btn);
   });
