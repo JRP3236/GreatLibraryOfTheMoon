@@ -134,6 +134,13 @@ h1 {
 
   box-shadow: 0 0 25px rgba(0,0,0,0.2);
   border-radius: 8px;
+
+    background: linear-gradient(
+    to right,
+    #fdf6e3 48%,
+    #f1e4c8 50%,
+    #fdf6e3 52%
+  );
 }
 
 .entry-left {
@@ -180,13 +187,4 @@ h1 {
 .back-btn:hover {
   background: #f1e4c8;
   transform: translateY(-2px);
-}
-
-.entry-container {
-  background: linear-gradient(
-    to right,
-    #fdf6e3 48%,
-    #f1e4c8 50%,
-    #fdf6e3 52%
-  );
 }
