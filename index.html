@@ -64,6 +64,7 @@
     const enciclopediaData = {
       miembros: [
         {
+          category: "miembros",
           id: "zero",
           title: "Zero. La pluma del destino",
           portrait: "src/img/pjs/Zero.jpeg",
@@ -274,7 +275,7 @@ function openCategory(categoria) {
   backBtn.onclick = () => {
     container.innerHTML = '';
     openEnciclopedia();
-    loadContext('menu');
+    loadContext('enciclopedia');
   };
   container.appendChild(backBtn);
 }
@@ -296,7 +297,7 @@ function openCategory(categoria) {
     <div class="entry-right">
       <h2>${item.title}</h2>
       ${item.content}
-      <button class="back-btn" onclick="backToMenu(); loadContext('menu')">Volver al menú</button>
+      <button class="back-btn" onclick="openCategory(); loadContext(item.category)">Volver</button>
     </div>
   `;
 }
