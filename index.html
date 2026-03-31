@@ -297,14 +297,13 @@ function openCategory(categoria) {
     <div class="entry-right">
       <h2>${item.title}</h2>
       ${item.content}
-      <button class="back-btn" onclick="openCategory(); loadContext(item.category)">Volver</button>
+      <button class="back-btn" onclick="backToMenu(); loadContext('menu')">Volver al menú</button>
     </div>
   `;
 }
 
     function backToMenu() {
   const entryView = document.getElementById('entry-view');
-  const menu = document.querySelector('.menu');
 
   // ocultar entrada
   entryView.classList.add('hidden');
