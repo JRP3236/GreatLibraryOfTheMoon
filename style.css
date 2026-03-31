@@ -192,3 +192,9 @@ h1 {
   background: #f1e4c8;
   transform: translateY(-2px);
 }
+
+.entry-right p {
+  text-align: justify;
+  line-height: 1.6;
+  margin-bottom: 1em;
+}
