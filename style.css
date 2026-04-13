@@ -123,6 +123,7 @@ h1 {
 #encyclopedia-menu {
   display: flex;
   flex-direction: row;
+  margin: 0% 10%;
 
   overflow-y: auto;
   scrollbar-width: thin;
