@@ -960,7 +960,8 @@
       textEl.textContent = '';
 
       const pool = dialogues[context];
-      const randomDialogue = pool[Math.floor(Math.random() * pool.length)];
+      //const randomDialogue = pool[Math.floor(Math.random() * pool.length)]; //Funcionamiento normal
+      const randomDialogue = pool[Math.floor((Math.random() * (pool.length-3))+3)]; //Con 5 narradores, usa solo a Piers y CB
 
       portraitEl.src = randomDialogue.portrait;
 
