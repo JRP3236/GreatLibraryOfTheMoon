@@ -411,8 +411,13 @@
         {
           id: 5,
           portrait: 'src/img/pjs/Piers.jpeg',
-          text: 'Chicos, ¿por qué no tenemos un mapa todavía?'
-        }
+          text: 'Chicos, ¿por qué no tenemos un mapa todavía? Juraría que compré uno.'
+        },
+        /*{
+          id: 5,
+          portrait: 'src/img/pjs/Piers.jpeg',
+          text: 'Hemos ido a muchos lugares, espero que todos nuestros amigos estén bien.'
+        }*/
       ],
       misiones: [
         {
@@ -429,6 +434,16 @@
           id: 3,
           portrait: 'src/img/pjs/Violet.png',
           text: 'No... puedo rendirme...'
+        },
+        {
+          id: 3,
+          portrait: 'src/img/pjs/Violet.png',
+          text: 'No... puedo rendirme...'
+        },
+        {
+          id: 5,
+          portrait: 'src/img/pjs/Piers.jpeg',
+          text: 'Me encantaría completarlas todas, pero creo que ni con mi velocidad llegamos...'
         }
       ],
       enciclopedia: [
@@ -455,7 +470,7 @@
         {
           id: 5,
           portrait: 'src/img/pjs/Piers.jpeg',
-          text: '¡Cuantos libros! Esto me recuerda a aquella vez que hicimos el examen de ascenso en Shutta, que tiempos.'
+          text: 'La última vez que ví tantos libros fue para hacer un examen, fue casi peor que los demonios. Espera... ¿No me los tendré que aprender todos, verdad? ... ¿Zero?'
         }
       ],
       miembros: [
@@ -834,6 +849,11 @@
           id: 5,
           portrait: 'src/img/pjs/Piers.jpeg',
           text: '¿Espera? ¿Cómo que tanato qué? ¡Aika! ¡Se llama Aika!'
+        },
+        {
+          id: 6,
+          portrait: 'src/img/pjs/Piers.jpeg',
+          text: '¿Demonio? Aika, hijo mío, tu futuro lo escribes tú, no los libros.'
         }
       ],
       drakoktoniroas: [
@@ -1044,7 +1064,7 @@
 
       const pool = dialogues[context];
       //const randomDialogue = pool[Math.floor(Math.random() * pool.length)]; //Funcionamiento normal
-      const randomDialogue = pool[Math.floor((Math.random() * (pool.length-3))+3)]; //Con 5 narradores, usa solo a Piers y CB
+      const randomDialogue = pool[Math.floor((Math.random() * (pool.length-3))+3)]; //Omite los 3 primeros narradores
 
       portraitEl.src = randomDialogue.portrait;
 
