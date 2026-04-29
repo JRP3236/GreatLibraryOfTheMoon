@@ -1065,7 +1065,7 @@
       const pool = dialogues[context];
       //const randomDialogue = pool[Math.floor(Math.random() * pool.length)]; //Funcionamiento normal
       //const randomDialogue = pool[Math.floor((Math.random() * (pool.length-3))+3)]; //Omite los 3 primeros narradores
-      const randomDialogue = 4; //siempre el narrador 4
+      const randomDialogue = pool[Math.floor((Math.random() * (1))+3)];; //siempre el narrador 4
 
       portraitEl.src = randomDialogue.portrait;
 
