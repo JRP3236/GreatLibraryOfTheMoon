@@ -843,7 +843,7 @@
         {
           id: 4,
           portrait: 'src/img/pjs/CB.png',
-          text: 'Vale, podrá copiar cualquier ataque, pero su hacha no brilla y cambia de colores.'
+          text: 'Vale, podrá copiar cualquier ataque, pero su hacha no brilla ni cambia de colores.'
         },
         {
           id: 5,
@@ -1063,9 +1063,9 @@
       textEl.textContent = '';
 
       const pool = dialogues[context];
-      //const randomDialogue = pool[Math.floor(Math.random() * pool.length)]; //Funcionamiento normal
+      const randomDialogue = pool[Math.floor(Math.random() * pool.length)]; //Funcionamiento normal
       //const randomDialogue = pool[Math.floor((Math.random() * (pool.length-3))+3)]; //Omite los 3 primeros narradores
-      const randomDialogue = pool[Math.floor((Math.random() * (1))+3)];; //siempre el narrador 4
+      //const randomDialogue = pool[Math.floor((Math.random() * (1))+3)];; //siempre el narrador 4
 
       portraitEl.src = randomDialogue.portrait;
 
