@@ -1129,6 +1129,7 @@
 function openCategory(categoria) {
   const container = document.getElementById('encyclopedia-menu');
   container.innerHTML = '';
+  document.querySelector('h1').innerHTML = categoria.charAt(0).toUpperCase() + categoria.slice(1);
 
   const items = enciclopediaData[categoria];
 
