@@ -5,8 +5,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gran Biblioteca de la Luna</title>
-  <link rel="stylesheet" href="style.css" media="screen and (min-width: 769px)">
-  <link rel="stylesheet" href="mobile.css" media="screen and (max-width: 768px)">
+   <script>
+window.addEventListener('DOMContentLoaded', () => {
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+
+    if (window.innerWidth <= 768) {
+        link.href = 'style.css';
+    } else {
+        link.href = 'desktop.css';
+    }
+
+    document.head.appendChild(link);
+});
+</script>
 </head>
 
 <body>
