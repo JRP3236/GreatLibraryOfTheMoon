@@ -16,14 +16,23 @@ html, body {
 }
 
 body {
-  height: 100vh;
+  min-height: 100dvh;
   background: radial-gradient(circle at center, #f5ecd9, #e8dcc2);
   color: #3b2f2f;
+ 
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   overflow-x: hidden;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
 }
 
 .container {
