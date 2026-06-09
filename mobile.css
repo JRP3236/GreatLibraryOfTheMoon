@@ -5,6 +5,12 @@
   font-family: 'Georgia', serif;
 }
 
+/* Global scrollbar (works in most cases) */
+html, body {
+  scrollbar-width: thin;
+  scrollbar-color: #c2b28f #fdf6e3;
+}
+
 .hidden {
   display: none !important;
 }
