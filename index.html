@@ -5,20 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gran Biblioteca de la Luna</title>
-   <script>
-window.addEventListener('DOMContentLoaded', () => {
-    const link = document.createElement('link');
-    link.rel = 'stylesheet';
-
-    if (window.innerWidth <= 768) {
-        link.href = 'mobile.css';
-    } else {
-        link.href = 'style.css';
-    }
-
-    document.head.appendChild(link);
-});
-</script>
+   <link rel="stylesheet" href="style.css" media="screen and (min-width: 769px)">
+<link rel="stylesheet" href="mobile.css" media="screen and (max-width: 768px)">
 </head>
 
 <body>
