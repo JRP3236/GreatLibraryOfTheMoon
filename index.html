@@ -1087,12 +1087,11 @@
 
     function openEnciclopedia() {
   // ocultar elementos anteriores
-  document.querySelector('h1').classList.add('hidden');
+  document.querySelector('h1').innerHTML = 'Enciclopedia';
   document.querySelector('.menu').classList.add('hidden');
 
   const container = document.getElementById('encyclopedia-menu');
   container.classList.remove('hidden');
-  container.innerHTML = ''; // limpiar contenido previo
 
   // crear botones dinámicamente
   Object.keys(enciclopediaData).forEach(categoria => {
