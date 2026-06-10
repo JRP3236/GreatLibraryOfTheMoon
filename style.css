@@ -33,6 +33,7 @@ body {
 h1 {
   font-size: 3rem;
   margin-bottom: 2rem;
+  margin-top: 2rem;
   letter-spacing: 2px;
   text-shadow: 1px 1px 0px #d6c7a1;
 }
