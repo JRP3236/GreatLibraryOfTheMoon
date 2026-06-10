@@ -45,8 +45,7 @@ body {
 h1 {
   font-size: 2rem;
   margin-bottom: 1rem;
-  height: 6rem;
-  min-height: 3rem;
+  min-height: 100px;
   align-content: center;
   letter-spacing: 2px;
   text-shadow: 1px 1px 0px #d6c7a1;
