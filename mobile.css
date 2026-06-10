@@ -167,7 +167,7 @@ h1 {
   padding-bottom: 140px;
 
   overflow-y: auto;
-  max-height: calc(100dvh - 140px);
+  max-height: calc(100dvh - 300px);
 
   scrollbar-width: thin;
   scrollbar-color: #c2b28f #fdf6e3;
@@ -215,6 +215,8 @@ h1 {
 .entry-right {
   width: 100%;
   height: 65%;
+  max-height: calc(65% - 140px);
+ 
   padding: 15px;
   overflow-y: auto;
   padding-bottom: 140px;
