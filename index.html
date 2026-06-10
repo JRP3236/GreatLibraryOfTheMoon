@@ -1115,7 +1115,7 @@
   //Abre árbol de misiones
   function openMisiones() {
   // ocultar elementos anteriores
-  document.querySelector('h1').innerHTML = 'Enciclopedia';
+  document.querySelector('h1').innerHTML = 'Misiones';
   document.querySelector('.menu').classList.add('hidden');
 
   const container = document.getElementById('encyclopedia-menu');
@@ -1125,7 +1125,7 @@
   container.innerHTML = '';
 
   // crear botones dinámicamente
-  Object.keys(enciclopediaData).forEach(categoria => {
+  Object.keys(missionsData).forEach(categoria => {
     const btn = document.createElement('button');
     btn.classList.add('book-button');
 
@@ -1133,12 +1133,70 @@
     btn.textContent = categoria.charAt(0).toUpperCase() + categoria.slice(1);
 
     btn.onclick = () => {
-      openCategory(categoria);
+      openMission(categoria);
       loadContext(categoria);
     };
 
     container.appendChild(btn);
   });
+      // botón "Volver" al final
+  const backBtn = document.createElement('button');
+  backBtn.classList.add('book-button');
+  backBtn.textContent = 'Volver';
+  backBtn.onclick = () => {
+    container.innerHTML = '';
+    document.querySelector('h1').innerHTML = 'Gran Biblioteca de la Luna';
+    document.querySelector('.menu').classList.remove('hidden');
+    document.querySelector('h1').classList.remove('hidden');
+    loadContext('menu');
+  };
+  container.appendChild(backBtn);
+}
+
+  function openMission(categoria) {
+  const container = document.getElementById('encyclopedia-menu');
+  container.innerHTML = '';
+  document.querySelector('h1').innerHTML = categoria.charAt(0).toUpperCase() + categoria.slice(1);
+
+  const items = missionsData[categoria];
+
+  items.forEach(item => {
+    const btn = document.createElement('button');
+    btn.classList.add('book-button');
+    btn.textContent = item.title;
+
+    btn.onclick = () => {
+      openEntry(item);
+      loadContext(item.id);
+    };
+
+    container.appendChild(btn);  
+  });
+      // botón "Volver" al final
+  const backBtn = document.createElement('button');
+  backBtn.classList.add('book-button');
+  backBtn.textContent = 'Volver';
+  backBtn.onclick = () => {
+    container.innerHTML = '';
+    document.querySelector('h1').innerHTML = 'Gran Biblioteca de la Luna';
+    document.querySelector('.menu').classList.remove('hidden');
+    document.querySelector('h1').classList.remove('hidden');
+    loadContext('menu');
+  };
+  container.appendChild(backBtn);
+}
+
+        // botón "Volver" al final
+  const backBtn = document.createElement('button');
+  backBtn.classList.add('book-button');
+  backBtn.textContent = 'Volver';
+  backBtn.onclick = () => {
+    container.innerHTML = '';
+    openMisiones();
+    loadContext('misiones');
+  };
+  container.appendChild(backBtn);
+}
 
     //Colección Misiones
     const missionsData = {
@@ -1306,20 +1364,7 @@
         }
       ]
     }
-      
-  // botón "Volver" al final
-  const backBtn = document.createElement('button');
-  backBtn.classList.add('book-button');
-  backBtn.textContent = 'Volver';
-  backBtn.onclick = () => {
-    container.innerHTML = '';
-    document.querySelector('h1').innerHTML = 'Gran Biblioteca de la Luna';
-    document.querySelector('.menu').classList.remove('hidden');
-    document.querySelector('h1').classList.remove('hidden');
-    loadContext('menu');
-  };
-  container.appendChild(backBtn);
-}
+    
 
     
 function openCategory(categoria) {
