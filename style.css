@@ -136,14 +136,16 @@ h1 {
   transform: translateY(-2px);
 }
 
-#encyclopedia-menu {
-  display: flex;
-  flex-direction: row;
-  margin: 0% 10%;
-  overflow-y: auto;
-  scrollbar-width: thin;
-  scrollbar-color: #c2b28f #fdf6e3;
-}
+  #encyclopedia-menu {
+      display: flex;
+      flex-direction: row;
+      margin: 0% 10%;
+      overflow-x: auto;
+      scrollbar-width: thin;
+      scrollbar-color: #c2b28f #fdf6e3;
+      width: 90%;
+      justify-content: center;
+  }
 
 .entry-container {
   position: fixed;
