@@ -40,16 +40,17 @@ body {
   width: 100%;
   text-align: center;
   align-items: center;
+  padding-top: 100px;
 }
 
 h1 {
   font-size: 2rem;
   margin-bottom: 1rem;
-  margin-top: 1rem;
   letter-spacing: 2px;
   text-shadow: 1px 1px 0px #d6c7a1;
   background: rgba(253, 246, 227, 0.95);
   border-bottom: 3px solid #c2b28f;
+  width: 100%;
 }
 
 .menu {
