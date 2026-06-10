@@ -169,7 +169,7 @@ h1 {
   margin: 5%;
   
   overflow-y: auto;
-  max-height: calc(100dvh - 300px);
+  max-height: calc(100dvh - 200px);
 
   scrollbar-width: thin;
   scrollbar-color: #c2b28f #fdf6e3;
