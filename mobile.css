@@ -182,6 +182,7 @@ h1 {
 
   width: 95%;
   height: 90%;
+  max-height: calc(90% - 140px);
 
   background: #fdf6e3;
   border: 3px solid #c2b28f;
