@@ -83,7 +83,10 @@ h1 {
   z-index: 1000;
   
   width: 100%;
-  height: 150px;
+
+  min-height: 120px;
+  max-height: 40vh;
+  
   background: rgba(253, 246, 227, 0.95);
   border-top: 3px solid #c2b28f;
   display: flex;
