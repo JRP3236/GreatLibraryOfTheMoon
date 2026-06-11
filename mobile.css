@@ -30,14 +30,6 @@ body {
   overflow-x: hidden;
 }
 
-body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  min-height: 100vh;
-}
-
 .container {
   width: 100%;
   text-align: center;
